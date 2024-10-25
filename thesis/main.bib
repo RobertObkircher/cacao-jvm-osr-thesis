@@ -1,0 +1,155 @@
+@inproceedings{10.1145/3486606.3486782,
+  author = {D'Souza, Matt and Duboscq, Gilles},
+  title = {Lightweight On-Stack Replacement in Languages with Unstructured Loops},
+  year = {2021},
+  isbn = {9781450391092},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3486606.3486782},
+  doi = {10.1145/3486606.3486782},
+  abstract = {On-stack replacement (OSR) is a popular technique used by just in time (JIT) compilers. A JIT can use OSR to transfer from interpreted to compiled code in the middle of execution, immediately reaping the performance benefits of compilation. This technique typically relies on loop counters, so it cannot be easily applied to languages with unstructured control flow. It is possible to reconstruct the high-level loop structures of an unstructured language using a control flow analysis, but such an analysis can be complicated, expensive, and language-specific. In this paper, we present a more lightweight strategy for OSR in unstructured languages which relies only on detecting backward jumps. We design a simple, language-agnostic API around this strategy for language interpreters. We then discuss our implementation of the API in the Truffle framework, and the design choices we made to make it efficient and correct. In our evaluation, we integrate the API with Truffle's LLVM bitcode interpreter, and find the technique is effective at improving start-up performance without harming warmed-up performance.},
+  booktitle = {Proceedings of the 13th ACM SIGPLAN International Workshop on Virtual Machines and Intermediate Languages},
+  pages = {4–13},
+  numpages = {10},
+  keywords = {unstructured loops, bytecode interpreter, Truffle, on-stack replacement, partial evaluation},
+  location = {Chicago, IL, USA},
+  series = {VMIL 2021}
+}
+
+@inproceedings{10.1145/3192366.3192396,
+  author = {D'Elia, Daniele Cono and Demetrescu, Camil},
+  title = {On-Stack Replacement, Distilled},
+  year = {2018},
+  isbn = {9781450356985},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3192366.3192396},
+  doi = {10.1145/3192366.3192396},
+  abstract = {On-stack replacement (OSR) is essential technology for adaptive optimization, allowing changes to code actively executing in a managed runtime. The engineering aspects of OSR are well-known among VM architects, with several implementations available to date. However, OSR is yet to be explored as a general means to transfer execution between related program versions, which can pave the road to unprecedented applications that stretch beyond VMs. We aim at filling this gap with a constructive and provably correct OSR framework, allowing a class of general-purpose transformation functions to yield a special-purpose replacement. We describe and evaluate an implementation of our technique in LLVM. As a novel application of OSR, we present a feasibility study on debugging of optimized code, showing how our techniques can be used to fix variables holding incorrect values at breakpoints due to optimizations.},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+  pages = {166–180},
+  numpages = {15},
+  keywords = {debugging, dynamic compilers, deoptimization},
+  location = {Philadelphia, PA, USA},
+  series = {PLDI 2018}
+}
+
+@misc{JavaSE,
+  title = {{Java SE} Specifications},
+  note  = {\url{https://docs.oracle.com/javase/specs/index.html}, last accessed on \mbox{2024-10-05}},
+}
+
+@article{MethodInlining,
+  author = {Tobias Schwarzinger},
+  title = {Method Inlining in the Second Stage Compiler of the {CACAO VM}},
+  year = {2020},
+}
+
+@misc{CLR-OSR,
+  title = {On Stack Replacement in the {CLR}},
+  note  = {\url{https://github.com/dotnet/runtime/blob/9866d1285dcf2448c966edbf02b8c17585d430fb/docs/design/features/OnStackReplacement.md}, last accessed on \mbox{2024-10-05}},
+}
+
+@misc{cacao-repo,
+    title = {{CACAO VM} source code},
+    note  = {\url{https://bitbucket.org/cacaovm/cacao/}, last accessed on \mbox{2024-10-05}},
+}
+
+@misc{cacao-homepage,
+  title = {{CACAO VM} homepage},
+  note  = {\url{http://www.cacaojvm.org/}, last accessed on \mbox{2024-10-05}},
+}
+
+@misc{specjvm2008,
+  title = {{SPECjvm} 2008},
+  note = {\url{https://www.spec.org/jvm2008/}, last accessed on \mbox{2024-10-05}}
+}
+
+@article{AdapOptSurvey,
+  author = {Arnold, Matthew and Fink, Stephen and Grove, David and Hind, Michael and Sweeney, Peter},
+  year = {2005},
+  month = {02},
+  pages = {449-466},
+  title = {A Survey of Adaptive Optimization in Virtual Machines},
+  volume = {93},
+  journal = {Proceedings of the IEEE},
+  doi = {10.1109/JPROC.2004.840305}
+}
+
+@inproceedings{10.1145/1294325.1294356,
+  author = {Steiner, Edwin and Krall, Andreas and Thalinger, Christian},
+  title = {Adaptive Inlining and On-Stack Replacement in the {CACAO} Virtual Machine},
+  year = {2007},
+  isbn = {9781595936721},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/1294325.1294356},
+  doi = {10.1145/1294325.1294356},
+  abstract = {Method inlining is a well-known and effective optimization technique for object-oriented programs. In the context of dynamic compilation, method inlining can be used as an adaptive optimization in order to eliminate the overhead of frequently executed calls. This work presents an implementation of method inlining in the CACAO virtual machine. On-stack replacement is used for installing optimized code and for deoptimizing code when optimistic assumptions of the optimizer are broken by dynamic class loading. Three inlining heuristics are compared using empirical results from a set of benchmark programs. The best heuristic eliminates 51.5% up to 99.96% of all executed calls and improves execution time up to 18%.},
+  booktitle = {Proceedings of the 5th International Symposium on Principles and Practice of Programming in Java},
+  pages = {221–226},
+  numpages = {6},
+  keywords = {just-in-time compiler, method inlining, on-stack replacement, virtual machines},
+  location = {Lisboa, Portugal},
+  series = {PPPJ '07}
+}
+
+@book{EislJosef2013Offt,
+  year = {2013},
+  title = {Optimization framework for the {CACAO VM}},
+  language = {eng},
+  author = {Eisl, Josef},
+  doi = {10.34726/hss.2013.23350},
+}
+
+@article{cacao-64bit-jit,
+  author = {Krall, Andreas and Grafl, Reinhard},
+  title = {{CACAO} — A 64-bit {JavaVM} just-in-time compiler},
+  journal = {Concurrency: Practice and Experience},
+  volume = {9},
+  number = {11},
+  pages = {1017-1030},
+  doi = {10.1002/(SICI)1096-9128(199711)9:11<1017::AID-CPE347>3.0.CO;2-0},
+  abstract = {Abstract This paper describes the design and implementation of CACAO, a just-in-time compiler for Java. The CACAO system translates Java byte code on demand into native code for the ALPHA processor. During this translation process the stack-oriented Java byte code is transformed into a register-oriented intermediate code. Local variables and stack locations are replaced by pseudo-registers eliminating the 32-bit restriction on address types. A fast register allocation algorithm is applied to map the pseudo-registers to machine registers. During code generation, field offsets are computed for proper alignment on 64-bit architectures. Even though the CACAO system has to incur loading and compilation time, it executes Java programs up to 85 times faster than the JDK interpreter, and up to seven times faster than the kaffe JIT compiler. It is slightly slower than equivalent C programs compiled at the highest optimization level. © 1997 John Wiley \& Sons, Ltd.},
+  year = {1997}
+}
+
+@article{10.1145/191081.191116,
+  author = {H\"{o}lzle, Urs and Ungar, David},
+  title = {A Third-Generation {SELF} Implementation: Reconciling Responsiveness with Performance},
+  year = {1994},
+  issue_date = {Oct. 1994},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {29},
+  number = {10},
+  issn = {0362-1340},
+  url = {https://doi.org/10.1145/191081.191116},
+  doi = {10.1145/191081.191116},
+  abstract = {Programming systems should be both responsive (to support rapid development) and efficient (to complete computations quickly). Pure object-oriented languages are harder to implement efficiently since they need optimization to achieve good performance. Unfortunately, optimization conflicts with interactive responsiveness because it tends to produce long compilation pauses, leading to unresponsive programming environments. Therefore, to achieve good responsiveness, existing exploratory programming environments such as the Smalltalk-80 environment rely on interpretation or non-optimizing dynamic compilation. But such systems pay a price for their interactiveness, since they may execute programs several times slower than an optimizing system.SELF-93 reconciles high performance with responsiveness by combining a fast, non-optimizing compiler with a slower, optimizing compiler. The resulting system achieves both excellent performance (two or three times faster than existing Smalltalk systems) and good responsiveness. Except for situations requiring large applications to be (re)compiled from scratch, the system allows for pleasant interactive use with few perceptible compilation pauses. To our knowledge, SELF-93 is the first implementation of a pure object-oriented language achieving both good performance and good responsiveness.When measuring interactive pauses, it is imperative to treat multiple short pauses as one longer pause if the pauses occur in short succession, since they are perceived as one pause by the user. We propose a definition of pause clustering and show that clustering can make an order-of-magnitude difference in the pause time distribution.},
+  journal = {SIGPLAN Not.},
+  month = {oct},
+  pages = {229–243},
+  numpages = {15}
+}
+
+
+@article{dominators,
+  author = {Lengauer, Thomas and Tarjan, Robert Endre},
+  title = {A fast algorithm for finding dominators in a flowgraph},
+  year = {1979},
+  issue_date = {July 1979},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {1},
+  number = {1},
+  issn = {0164-0925},
+  url = {https://doi.org/10.1145/357062.357071},
+  doi = {10.1145/357062.357071},
+  abstract = {A fast algorithm for finding dominators in a flowgraph is presented. The algorithm uses
+  depth-first search and an efficient method of computing functions defined on paths in trees. A simple implementation of the algorithm runs in O(m log n) time, where m is the number of edges and n is the number of vertices in the problem graph. A more sophisticated implementation runs in O(mα(m, n)) time, where α(m, n) is a functional inverse of Ackermann's function.Both versions of the algorithm were implemented in Algol W, a Stanford University version of Algol, and tested on an IBM 370/168. The programs were compared with an implementation by Purdom and Moore of a straightforward O(mn)-time algorithm, and with a bit vector algorithm described by Aho and Ullman. The fast algorithm beat the straightforward algorithm and the bit vector algorithm on all but the smallest graphs tested.},
+  journal = {ACM Trans. Program. Lang. Syst.},
+  month = jan,
+  pages = {121–141},
+  numpages = {21}
+}

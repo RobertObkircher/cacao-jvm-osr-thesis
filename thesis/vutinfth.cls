@@ -1,0 +1,1 @@
+../vutinfth/vutinfth.cls

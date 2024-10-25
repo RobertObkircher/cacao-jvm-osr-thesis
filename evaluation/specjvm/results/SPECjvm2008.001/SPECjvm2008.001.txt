@@ -1,0 +1,172 @@
+================================
+SPECjvm2008 Base
+================================
+n/a n/a
+CACAOVM - Verein zur Foerderung der freien virtuellen Maschine CACAO CACAO
+Tested by: n/a Test date: Fri Oct 04 23:07:02 GMT 2024
+Run is valid, but not compliant
+
+================================
+compiler                      71.71                                   
+compress                      153.59                                  
+crypto                        80.68                                   
+mpegaudio                     78.48                                   
+scimark.large                 25.13                                   
+scimark.small                 100.12                                  
+serial                        20.61                                   
+startup                       27.13                                   
+xml                           105.11                                  
+Noncompliant composite result: 60.16 ops/m
+================================
+
+
+Submitter                     n/a                                     
+Submitter URL                 n/a                                     
+SPEC license                  n/a                                     
+Tester                        root                                    
+Location                      n/a                                     
+Test date:                    Fri Oct 04 23:07:02 GMT 2024            
+OS name                       Linux                                   
+OS available                  n/a                                     
+OS address bits               n/a                                     
+OS tuning                                                             
+Filesystem                    n/a                                     
+Other s/w name                                                        
+Other s/w tuning                                                      
+Other s/w available                                                   
+Vendor                        CACAOVM - Verein zur Foerderung der freien virtuellen Maschine CACAO
+Vendor URL                    http://www.azul.com/                    
+JVM name                      CACAO                                   
+JVM version                   1.6.2pre compiled mode                  
+JVM available                 n/a                                     
+Java Specification            1.7                                     
+JVM address bits              64                                      
+JVM initial heap memory       n/a                                     
+JVM maximum heap memory       n/a                                     
+JVM command line              n/a                                     
+JVM command line startup                                              
+JVM launcher startup          default                                 
+Additional JVM tuning                                                 
+JVM class path                SPECjvm2008.jar                         
+JVM boot class path           /usr/lib/jvm/zulu7-ca-amd64/jre/lib/resources.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/lib/rt.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/lib/jsse.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/lib/jce.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/lib/charsets.jar:/usr/lib/jvm/zulu7-ca-amd64/jre/classes
+HW vendor                     n/a                                     
+HW vendor's URL               n/a                                     
+HW model                      n/a                                     
+HW available                  n/a                                     
+CPU vendor                    n/a                                     
+CPU vendor's URL              n/a                                     
+CPU name                      n/a                                     
+CPU frequency                 n/a                                     
+# of logical cpus             n/a                                     
+# of chips                    n/a                                     
+# of cores                    n/a                                     
+Cores per chip                n/a                                     
+Threads per core              n/a                                     
+Threading enabled             n/a                                     
+HW address bits               n/a                                     
+Primary cache                 n/a                                     
+Secondary cache               n/a                                     
+Other cache                   n/a                                     
+Memory size                   n/a                                     
+Memory details                n/a                                     
+Other HW details              n/a                                     
+
+Not a compliant sequence of benchmarks for publication.
+
+Details of Runs
+---------------
+PASSED
+
+Benchmark                     Iteration      Expected(ms)   Actual(ms)     Operations     ops/m          
+---------------------------------------------------------------------------------------------------
+
+compiler.sunflow              warmup         120000         120000         148.97         74.48          
+compiler.sunflow              iteration 1    240000         240000         286.83         71.71          
+
+compress                      warmup         120000         120000         307.56         153.78         
+compress                      iteration 1    240000         240000         614.34         153.59         
+
+crypto.aes                    warmup         120000         120000         88.22          44.11          
+crypto.aes                    iteration 1    240000         240000         176.71         44.18          
+
+crypto.rsa                    warmup         120000         120000         444.55         222.27         
+crypto.rsa                    iteration 1    240000         240000         890.52         222.63         
+
+crypto.signverify             warmup         120000         120000         106.43         53.22          
+crypto.signverify             iteration 1    240000         240000         213.61         53.40          
+
+mpegaudio                     warmup         120000         120000         157.33         78.66          
+mpegaudio                     iteration 1    240000         240000         313.90         78.48          
+
+scimark.fft.large             warmup         120000         120000         88.01          44.00          
+scimark.fft.large             iteration 1    240000         240000         154.03         38.51          
+
+scimark.lu.large              warmup         120000         120000         22.51          11.26          
+scimark.lu.large              iteration 1    240000         240000         45.24          11.31          
+
+scimark.sor.large             warmup         120000         120000         77.61          38.81          
+scimark.sor.large             iteration 1    240000         240000         155.40         38.85          
+
+scimark.sparse.large          warmup         120000         120000         70.04          35.02          
+scimark.sparse.large          iteration 1    240000         240000         140.72         35.18          
+
+scimark.monte_carlo           warmup         120000         120000         33.25          16.62          
+scimark.monte_carlo           iteration 1    240000         240000         67.42          16.86          
+
+scimark.fft.small             warmup         120000         120000         455.95         227.98         
+scimark.fft.small             iteration 1    240000         240000         892.41         223.10         
+
+scimark.lu.small              warmup         120000         120000         251.14         125.57         
+scimark.lu.small              iteration 1    240000         240000         502.24         125.56         
+
+scimark.sor.small             warmup         120000         120000         334.72         167.36         
+scimark.sor.small             iteration 1    240000         240000         670.55         167.64         
+
+scimark.sparse.small          warmup         120000         120000         254.71         127.36         
+scimark.sparse.small          iteration 1    240000         240000         508.29         127.07         
+
+serial                        warmup         120000         120000         41.07          20.54          
+serial                        iteration 1    240000         240000         82.45          20.61          
+
+startup.helloworld            iteration 1    null           319            1.00           188.09         
+
+startup.compiler.compiler     iteration 1    null           6367           1.00           9.42           
+
+startup.compiler.sunflow      iteration 1    null           5449           1.00           11.01          
+
+startup.compress              iteration 1    null           1865           1.00           32.17          
+
+startup.crypto.aes            iteration 1    null           3647           1.00           16.45          
+
+startup.crypto.rsa            iteration 1    null           1217           1.00           49.30          
+
+startup.crypto.signverify     iteration 1    null           1232           1.00           48.70          
+
+startup.mpegaudio             iteration 1    null           2835           1.00           21.16          
+
+startup.scimark.fft           iteration 1    null           1089           1.00           55.10          
+
+startup.scimark.lu            iteration 1    null           687            1.00           87.34          
+
+startup.scimark.monte_carlo   iteration 1    null           2029           1.00           29.57          
+
+startup.scimark.sor           iteration 1    null           2014           1.00           29.79          
+
+startup.scimark.sparse        iteration 1    null           1684           1.00           35.63          
+
+startup.serial                iteration 1    null           2895           1.00           20.73          
+
+startup.sunflow               iteration 1    null           2047           1.00           29.31          
+
+startup.xml.transform         iteration 1    null           25118          1.00           2.39           
+
+startup.xml.validation        iteration 1    null           2951           1.00           20.33          
+
+xml.transform                 warmup         120000         120000         120.91         60.46          
+xml.transform                 iteration 1    240000         240000         240.13         60.03          
+
+xml.validation                warmup         120000         120000         363.34         181.67         
+xml.validation                iteration 1    240000         240000         736.12         184.03         
+
+SPECjvm2008 Version: [SPECjvm2008 1.01 (20090519)]
+Copyright (C) 2008-2024 SPEC. All rights reserved

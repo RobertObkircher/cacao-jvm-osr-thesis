@@ -1,0 +1,10 @@
+Report:      SPECjvm2008 Base summary
+Result:      Noncompliant composite result: 60.16 ops/m
+HW Model:    n/a, n/a
+HW CPU:      n/a, n/a
+OS:          Linux
+JVM:         CACAOVM - Verein zur Foerderung der freien virtuellen Maschine CACAO, CACAO, 1.6.2pre compiled mode
+JVM tuning:  n/a
+JVM startup:  
+Tester:      root, n/a
+Run date:    Fri Oct 04 23:07:02 GMT 2024
