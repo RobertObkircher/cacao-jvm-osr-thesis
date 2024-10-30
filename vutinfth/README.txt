@@ -7,9 +7,9 @@
 Description
 -----------
 The vutinfth document class is a LaTeX2e-based template for all theses written
-at the Faculty of Informatics at the TU Wien. This package includes the
-document class and its documentation as well as an example document that
-includes a short introduction to LaTeX.
+at TU Wien Informatics. This package includes the document class and its
+documentation as well as an example document that includes a short introduction
+to LaTeX.
 
 
 Support
@@ -75,14 +75,13 @@ example.tex        An LaTeX source file showing the use of the vutinfth
 intro.bib          The bibliography file of intro.tex.
 intro.tex          The LaTeX source file of a document that gives an
                      introduction to LaTeX.
-lppl.txt           The LaTeX Project Pulic License v1.3c.
+lppl.txt           The LaTeX Project Public License v1.3c.
 README.txt         This file.
 vutinfth.dtx       The documented source code and documentation file of the
                      vutinfth document class.
 vutinfth.ins       The installer file of the vutinfth document class.
 
-graphics/*.*       Corporate identity graphics of the TU Wien and its Faculty
-                     of Informatics.
+graphics/*.*       Corporate identity graphics of TU Wien Informatics.
 
 
 Known Issues
@@ -90,6 +89,11 @@ Known Issues
 The minitoc package is incompatible with this document class since the
 incompatibility of the memoir document class is inherited. Use the titletoc
 package as a replacement.
+
+This document class uses the naustrian language of the babel package. It might
+be necessary to install the babel-german explicitly (e.g., using
+                       tlmgr install babel-german
+on Linux.
 
 
 Acknowledgements
@@ -100,7 +104,7 @@ improvements in version 1.4.
 
 Copyright Notice
 ----------------
-Copyright (C) 2014-2020 by Thomas Auzinger <thomas@auzinger.name>
+Copyright (C) 2014-2024 by Thomas Auzinger <thomas@auzinger.name>
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3
@@ -118,5 +122,4 @@ This work consists of the files vutinfth.dtx and vutinfth.ins
 and the derived file vutinfth.cls.
 This work also consists of the file intro.tex.
 
-The 'TU Wien' logo and 'Fakultät für !nformatik' logo are copyright of the TU
-Wien.
+The 'TU Wien Informatics' logo and signet are copyright of the TU Wien.

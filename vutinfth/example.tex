@@ -1,6 +1,20 @@
-% Copyright (C) 2014-2020 by Thomas Auzinger <thomas@auzinger.name>
+% Copyright (C) 2014-2024 by Thomas Auzinger <thomas@auzinger.name>
 
 \documentclass[draft,final]{vutinfth} % Remove option 'final' to obtain debug information.
+
+% Define convenience functions to use the author name and the thesis title in the PDF document properties.
+\newcommand{\authorname}{Forename Surname} % The author name without titles.
+\newcommand{\thesistitle}{Title of the Thesis} % The title of the thesis. The English version should be used, if it exists.
+
+% Create the XMP metadata file for the creation of PDF/A compatible documents.
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+\Author{\authorname}                                    % The author's name in the document properties.
+\Title{\thesistitle}                                    % The document's title in the document properties.
+\Language{de-AT}                                        % The document's language in the document properties. Select 'en-US', 'en-GB', or 'de-AT'.
+\Keywords{a\sep list\sep of\sep keywords}               % The document's keywords in the document properties (separated by '\sep ').
+\Publisher{TU Wien}                                     % The document's publisher in the document properties.
+\Subject{Thesis}                                        % The document's subject in the document properties.
+\end{filecontents*}
 
 % Load packages to allow in- and output of non-ASCII characters.
 \usepackage{lmodern}        % Use an extension of the original Computer Modern font to minimize the use of bitmapped letters.
@@ -14,34 +28,27 @@
 \usepackage{microtype}  % Small-scale typographic enhancements.
 \usepackage[inline]{enumitem} % User control over the layout of lists (itemize, enumerate, description).
 \usepackage{multirow}   % Allows table elements to span several rows.
-\usepackage{booktabs}   % Improves the typesettings of tables.
+\usepackage{booktabs}   % Improves the typesetting of tables.
 \usepackage{subcaption} % Allows the use of subfigures and enables their referencing.
 \usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
-\usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
-\usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
-\usepackage{todonotes} % Provides tooltip-like todo notes.
-\usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
-\usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
-
-% Define convenience functions to use the author name and the thesis title in the PDF document properties.
-\newcommand{\authorname}{Forename Surname} % The author name without titles.
-\newcommand{\thesistitle}{Title of the Thesis} % The title of the thesis. The English version should be used, if it exists.
+\usepackage[dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
+\usepackage{nag}        % Issues warnings when best practices in writing LaTeX documents are violated.
+\usepackage{todonotes}  % Provides tooltip-like todo notes.
+\usepackage{morewrites} % Increases the number of external files that can be used.
+\usepackage[a-2b,mathxmp]{pdfx}      % Enables PDF/A compliance. Loads the package hyperref and has to be included second to last.
+\usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists of acronyms. This package has to be included last.
 
 % Set PDF document properties
 \hypersetup{
     pdfpagelayout   = TwoPageRight,           % How the document is shown in PDF viewers (optional).
-    linkbordercolor = {Melon},                % The color of the borders of boxes around crosslinks (optional).
-    pdfauthor       = {\authorname},          % The author's name in the document properties (optional).
-    pdftitle        = {\thesistitle},         % The document's title in the document properties (optional).
-    pdfsubject      = {Subject},              % The document's subject in the document properties (optional).
-    pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
+    linkbordercolor = {Melon},                % The color of the borders of boxes around hyperlinks (optional).
 }
 
 \setpnumwidth{2.5em}        % Avoid overfull hboxes in the table of contents (see memoir manual).
 \setsecnumdepth{subsection} % Enumerate subsections.
 
 \nonzeroparskip             % Create space between paragraphs (optional).
-\setlength{\parindent}{0pt} % Remove paragraph identation (optional).
+\setlength{\parindent}{0pt} % Remove paragraph indentation (optional).
 
 \makeindex      % Use an optional index.
 \makeglossaries % Use an optional glossary.
@@ -71,7 +78,7 @@
 \settitle{\thesistitle}{Titel der Arbeit} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
 \setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
 
-% Select the thesis type: bachelor / master / doctor / phd-school.
+% Select the thesis type: bachelor / master / doctor.
 % Bachelor:
 \setthesis{bachelor}
 %
@@ -82,14 +89,11 @@
 % Doctor:
 %\setthesis{doctor}
 %\setdoctordegree{rer.soc.oec.}% rer.nat. / techn. / rer.soc.oec.
-%
-% Doctor at the PhD School
-%\setthesis{phd-school} % Deactivate non-English title pages (see below)
 
 % For bachelor and master:
 \setcurriculum{Media Informatics and Visual Computing}{Medieninformatik und Visual Computing} % Sets the English and German name of the curriculum.
 
-% For dissertations at the PhD School:
+% Optional reviewer data:
 \setfirstreviewerdata{Affiliation, Country}
 \setsecondreviewerdata{Affiliation, Country}
 
@@ -100,7 +104,7 @@
 % The structure of the thesis has to conform to the guidelines at
 %  https://informatics.tuwien.ac.at/study-services
 
-\addtitlepage{naustrian} % German title page (not for dissertations at the PhD School).
+\addtitlepage{naustrian} % German title page.
 \addtitlepage{english} % English title page.
 \addstatementpage
 
@@ -139,6 +143,16 @@
 \input{intro.tex} % A short introduction to LaTeX.
 
 \backmatter
+
+% Declare the use of AI tools as mentioned in the statement of originality.
+% Use either the English aitools or the German kitools.
+\begin{aitools}
+\todo{Ihr Text hier.}
+\end{aitools}
+
+\begin{kitools}
+\todo{Enter your text here.}
+\end{kitools}
 
 % Use an optional list of figures.
 \listoffigures % Starred version, i.e., \listoffigures*, removes the toc entry.

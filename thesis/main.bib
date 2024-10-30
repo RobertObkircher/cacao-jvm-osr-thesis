@@ -35,6 +35,7 @@
 }
 
 @misc{JavaSE,
+  key = {JSE},
   title = {{Java SE} Specifications},
   note  = {\url{https://docs.oracle.com/javase/specs/index.html}, last accessed on \mbox{2024-10-05}},
 }
@@ -46,21 +47,25 @@
 }
 
 @misc{CLR-OSR,
+  key = {CLR},
   title = {On Stack Replacement in the {CLR}},
   note  = {\url{https://github.com/dotnet/runtime/blob/9866d1285dcf2448c966edbf02b8c17585d430fb/docs/design/features/OnStackReplacement.md}, last accessed on \mbox{2024-10-05}},
 }
 
 @misc{cacao-repo,
+    key = {CRE},
     title = {{CACAO VM} source code},
     note  = {\url{https://bitbucket.org/cacaovm/cacao/}, last accessed on \mbox{2024-10-05}},
 }
 
 @misc{cacao-homepage,
+  key = {CHP},
   title = {{CACAO VM} homepage},
   note  = {\url{http://www.cacaojvm.org/}, last accessed on \mbox{2024-10-05}},
 }
 
 @misc{specjvm2008,
+  key = {SPEC},
   title = {{SPECjvm} 2008},
   note = {\url{https://www.spec.org/jvm2008/}, last accessed on \mbox{2024-10-05}}
 }
@@ -152,4 +157,136 @@
   month = jan,
   pages = {121–141},
   numpages = {21}
+}
+
+@inproceedings{hotspot,
+  author = {Paleczny, Michael and Vick, Christopher and Click, Cliff},
+  year = {2001},
+  month = {01},
+  pages = {},
+  title = {The Java HotSpot Server Compiler.}
+}
+
+@mastersthesis{osr-jllvm,
+author  = "Markus Böck",
+title   = "Implementing On-Stack-Replacement in an LLVM-based JVM",
+school  = "TU Wien",
+year    = "2024",
+type={Bachelor's Thesis}
+}
+
+@misc{jllvm,
+  key = {JLLVM},
+  title = {JLLVM},
+  note  = {\url{https://github.com/JLLVM/JLLVM}, last accessed on \mbox{2024-10-30}},
+}
+
+@inproceedings{truffle,
+  author = {Wimmer, Christian and W\"{u}rthinger, Thomas},
+  title = {Truffle: a self-optimizing runtime system},
+  year = {2012},
+  isbn = {9781450315630},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2384716.2384723},
+  doi = {10.1145/2384716.2384723},
+  abstract = {We present Truffle, a novel framework for implementing managed languages in Java™. The language implementer writes an AST interpreter, which is integrated in our framework that allows tree rewriting during AST interpretation. Tree rewrites incorporate type feedback and other profiling information into the tree, thus specializing the tree and augmenting it with run-time information. When the tree reaches a stable state, partial evaluation compiles the tree into optimized machine code. The partial evaluation is done by Graal, the just-in-time compiler of our Java VM (a variation of the Java HotSpot VM). To show that Truffle supports a variety of programming language paradigms, we present prototype implementations of JavaScript (a dynamically typed programming language) and J (an array programming language).},
+  booktitle = {Proceedings of the 3rd Annual Conference on Systems, Programming, and Applications: Software for Humanity},
+  pages = {13–14},
+  numpages = {2},
+  keywords = {dynamic languages, graal, j, java, javascript, language implementation, virtual machine, truffle},
+  location = {Tucson, Arizona, USA},
+  series = {SPLASH '12}
+}
+
+@inproceedings{graalvm,
+  author = {W\"{u}rthinger, Thomas and Wimmer, Christian and W\"{o}\ss{}, Andreas and Stadler, Lukas and Duboscq, Gilles and Humer, Christian and Richards, Gregor and Simon, Doug and Wolczko, Mario},
+  title = {One VM to rule them all},
+  year = {2013},
+  isbn = {9781450324724},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2509578.2509581},
+  doi = {10.1145/2509578.2509581},
+  abstract = {Building high-performance virtual machines is a complex and expensive undertaking; many popular languages still have low-performance implementations. We describe a new approach to virtual machine (VM) construction that amortizes much of the effort in initial construction by allowing new languages to be implemented with modest additional effort. The approach relies on abstract syntax tree (AST) interpretation where a node can rewrite itself to a more specialized or more general node, together with an optimizing compiler that exploits the structure of the interpreter. The compiler uses speculative assumptions and deoptimization in order to produce efficient machine code. Our initial experience suggests that high performance is attainable while preserving a modular and layered architecture, and that new high-performance language implementations can be obtained by writing little more than a stylized interpreter.},
+  booktitle = {Proceedings of the 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming \& Software},
+  pages = {187–204},
+  numpages = {18},
+  keywords = {dynamic languages, java, javascript, language implementation, optimization, virtual machine},
+  location = {Indianapolis, Indiana, USA},
+  series = {Onward! 2013}
+}
+
+@inproceedings{deopt-grouping,
+  author = {Duboscq, Gilles and W\"{u}rthinger, Thomas and M\"{o}ssenb\"{o}ck, Hanspeter},
+  title = {Speculation without regret: reducing deoptimization meta-data in the Graal compiler},
+  year = {2014},
+  isbn = {9781450329262},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2647508.2647521},
+  doi = {10.1145/2647508.2647521},
+  abstract = {Speculative optimizations are used in most Just In Time (JIT) compilers in order to take advantage of dynamic runtime feedback. These speculative optimizations usually require the compiler to produce meta-data that the Virtual Machine (VM) can use as fallback when a speculation fails. This meta-data can be large and incurs a significant memory overhead since it needs to be stored alongside the machine code for as long as the machine code lives. The design of the Graal compiler leads to many speculations falling back to a similar state and location. In this paper we present deoptimization grouping, an optimization using this property of the Graal compiler to reduce the amount of meta-data that must be stored by the VM without having to modify the VM. We compare our technique with existing meta-data compression techniques from the HotSpot Virtual Machine and study how well they combine. In order to make informed decisions about speculation meta-data, we present an empirical analysis of the origin, impact and usages of this meta-data.},
+  booktitle = {Proceedings of the 2014 International Conference on Principles and Practices of Programming on the Java Platform: Virtual Machines, Languages, and Tools},
+  pages = {187–193},
+  numpages = {7},
+  keywords = {Java virtual machine, just-in-time compilation, metadata, speculative optimization},
+  location = {Cracow, Poland},
+  series = {PPPJ '14}
+}
+
+@inproceedings{10.1145/2451512.2451541,
+  author = {Lameed, Nurudeen A. and Hendren, Laurie J.},
+  title = {A modular approach to on-stack replacement in LLVM},
+  year = {2013},
+  isbn = {9781450312660},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2451512.2451541},
+  doi = {10.1145/2451512.2451541},
+  abstract = {On-stack replacement (OSR) is a technique that allows a virtual machine to interrupt running code during the execution of a function/method, to re-optimize the function on-the-fly using an optimizing JIT compiler, and then to resume the interrupted function at the point and state at which it was interrupted. OSR is particularly useful for programs with potentially long-running loops, as it allows dynamic optimization of those loops as soon as they become hot.This paper presents a modular approach to implementing OSR for the LLVM compiler infrastructure. This is an important step forward because LLVM is gaining popular support, and adding the OSR capability allows compiler developers to develop new dynamic techniques. In particular, it will enable more sophisticated LLVM-based JIT compiler approaches. Indeed, other compiler/VM developers can use our approach because it is a clean modular addition to the standard LLVM distribution. Further, our approach is defined completely at the LLVM-IR level and thus does not require any modifications to the target code generation.The OSR implementation can be used by different compilers to support a variety of dynamic optimizations. As a demonstration of our OSR approach, we have used it to support dynamic inlining in McVM. McVM is a virtual machine for MATLAB which uses a LLVM-based JIT compiler. MATLAB is a popular dynamic language for scientific and engineering applications that typically manipulate large matrices and often contain long-running loops, and is thus an ideal target for dynamic JIT compilation and OSRs. Using our McVM example, we demonstrate reasonable overheads for our benchmark set, and performance improvements when using it to perform dynamic inlining.},
+  booktitle = {Proceedings of the 9th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+  pages = {143–154},
+  numpages = {12},
+  keywords = {on-stack replacement, mcjit, matlab, llvm, jit compilation, dynamic optimization},
+  location = {Houston, Texas, USA},
+  series = {VEE '13}
+}
+
+@article{llvm-osr-1,
+  author = {Lameed, Nurudeen A. and Hendren, Laurie J.},
+  title = {A modular approach to on-stack replacement in LLVM},
+  year = {2013},
+  issue_date = {July 2013},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {48},
+  number = {7},
+  issn = {0362-1340},
+  url = {https://doi.org/10.1145/2517326.2451541},
+  doi = {10.1145/2517326.2451541},
+  abstract = {On-stack replacement (OSR) is a technique that allows a virtual machine to interrupt running code during the execution of a function/method, to re-optimize the function on-the-fly using an optimizing JIT compiler, and then to resume the interrupted function at the point and state at which it was interrupted. OSR is particularly useful for programs with potentially long-running loops, as it allows dynamic optimization of those loops as soon as they become hot.This paper presents a modular approach to implementing OSR for the LLVM compiler infrastructure. This is an important step forward because LLVM is gaining popular support, and adding the OSR capability allows compiler developers to develop new dynamic techniques. In particular, it will enable more sophisticated LLVM-based JIT compiler approaches. Indeed, other compiler/VM developers can use our approach because it is a clean modular addition to the standard LLVM distribution. Further, our approach is defined completely at the LLVM-IR level and thus does not require any modifications to the target code generation.The OSR implementation can be used by different compilers to support a variety of dynamic optimizations. As a demonstration of our OSR approach, we have used it to support dynamic inlining in McVM. McVM is a virtual machine for MATLAB which uses a LLVM-based JIT compiler. MATLAB is a popular dynamic language for scientific and engineering applications that typically manipulate large matrices and often contain long-running loops, and is thus an ideal target for dynamic JIT compilation and OSRs. Using our McVM example, we demonstrate reasonable overheads for our benchmark set, and performance improvements when using it to perform dynamic inlining.},
+  journal = {SIGPLAN Not.},
+  month = mar,
+  pages = {143–154},
+  numpages = {12},
+  keywords = {on-stack replacement, mcjit, matlab, llvm, jit compilation, dynamic optimization}
+}
+
+@inproceedings{llvm-osr-2,
+  author = {D'Elia, Daniele Cono and Demetrescu, Camil},
+  title = {Flexible on-stack replacement in LLVM},
+  year = {2016},
+  isbn = {9781450337786},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2854038.2854061},
+  doi = {10.1145/2854038.2854061},
+  abstract = {On-Stack Replacement (OSR) is a technique for dynamically transferring execution between different versions of a function at run time. OSR is typically used in virtual machines to interrupt a long-running function and recompile it at a higher optimization level, or to replace it with a different one when a speculative assumption made during its compilation no longer holds. In this paper we present a framework for OSR that introduces novel ideas and combines features of existing techniques that no previous solution provided simultaneously. New features include OSR with compensation code to adjust the program state during a transition and the ability to fire an OSR from arbitrary locations in the code. Our approach is platform-independent as the OSR machinery is entirely encoded at a compiler’s intermediate representation level. We implement and evaluate our technique in the LLVM compiler infrastructure, which is gaining popularity as Just-In-Time (JIT) compiler in virtual machines for dynamic languages such as Javascript, MATLAB, Python, and Ruby. As a case study of our approach, we show how to improve the state of the art in the optimization of the feval instruction, a performance-critical construct of the MATLAB language.},
+  booktitle = {Proceedings of the 2016 International Symposium on Code Generation and Optimization},
+  pages = {250–260},
+  numpages = {11},
+  keywords = {just-in-time compilation, deoptimization, code optimization, On-stack replacement, LLVM},
+  location = {Barcelona, Spain},
+  series = {CGO '16}
 }

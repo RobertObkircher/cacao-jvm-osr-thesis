@@ -1,7 +1,7 @@
 % \iffalse meta-comment
 %
 %% vutinfth.dtx
-%% Copyright (C) 2014-2020 by Thomas Auzinger <thomas@auzinger.name>
+%% Copyright (C) 2014-2024 by Thomas Auzinger <thomas@auzinger.name>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -28,7 +28,7 @@
 %<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<class>\ProvidesClass{vutinfth}
 %<*class>
-    [2020/02/20 v1.10 TU Wien Faculty of Informatics thesis template]
+    [2024/05/29 v1.13 TU Wien Informatics thesis template]
 %</class>
 %
 %<*driver>
@@ -69,15 +69,18 @@
 %
 % \newcommand{\issue}[1]{\href{https://gitlab.com/ThomasAUZINGER/vutinfth/issues/#1}{Issue \#{}#1}}
 %
-% \changes{v0.9}{2014/05/30}{Pre-release version}
-% \changes{v1.0}{2014/09/07}{Initial release version}
-% \changes{v1.1}{2014/10/07}{Added references to the GitLab environment}
-% \changes{v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
-% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle and changed mainmatter pagestyle to `Ruled'.}
-% \changes{v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
-% \changes{v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
-% \changes{v1.8}{2019/02/13}{Removed address information.}
-% \changes{v1.9}{2019/11/11}{Changed header graphics and unversity URL.}
+% \changes{v0.009=v0.9}{2014/05/30}{Pre-release version}
+% \changes{v1.000=v1.0}{2014/09/07}{Initial release version}
+% \changes{v1.001=v1.1}{2014/10/07}{Added references to the GitLab environment}
+% \changes{v1.003=v1.3}{2014/11/25}{Added support for a dissertation at the Vienna Phd School of Informatics. \issue{4}}
+% \changes{v1.004=v1.4}{2015/08/01}{Added comma to separate posttitle and changed mainmatter pagestyle to `Ruled'.}
+% \changes{v1.005=v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
+% \changes{v1.006=v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
+% \changes{v1.008=v1.8}{2019/02/13}{Removed address information.}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed header graphics and unversity URL.}
+% \changes{v1.011=v1.11}{2021/04/20}{Updated name of faculty to `TU Wien Informatics'.}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed obsolete support for a dissertation at the Vienna PhD School of Informations. \issue{8}}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
 %
 % \GetFileInfo{vutinfth.dtx}
 %
@@ -88,7 +91,7 @@
 % ^^A\DoNotIndex{\@empty,\@namedef,\@namelet,\@nameuse,\csname,\endcsname}
 % ^^A\DoNotIndex{\",\\}
 % ^^A\DoNotIndex{\else,\fi,\ifcsempty,\ifcsstring,\ifdefstrequal,\ifdefstring,\ifdraftdoc,\ifstrempty,\ifstrequal,\ifundef}
-% ^^A\DoNotIndex{\baselineskip,\bfseries,\bigskip,\centering,\chapter,\chapterstyle,\cleardoublepage,\displaydate,\expandafter,\fontsize,\footruleskip,\global,\graphicspath,\hfill,\hspace,\includegraphics,\languagename,\makeevenfoot,\makeevenhead,\makefootrule,\makeheadposition,\makeoddfoot,\makeoddhead,\makepagestyle,\makerunningwidth,\newdata,\newgeometry,\newlength,\pagestyle,\par,\parindent,\parskip,\raisebox,\relax,\restoregeometry,\rule,\selectfont,\selectlanguage,\setkeys,\setlength,\sfdefault,\sffamily,\smallskip,\space,\ss,\string,\textwidth,\thispagestyle,\vfill,\vspace}
+% ^^A\DoNotIndex{\baselineskip,\bfseries,\bigskip,\centering,\chapter,\chapterstyle,\cleardoublepage,\DTMusedate,\expandafter,\fontsize,\footruleskip,\global,\graphicspath,\hfill,\hspace,\includegraphics,\languagename,\makeevenfoot,\makeevenhead,\makefootrule,\makeheadposition,\makeoddfoot,\makeoddhead,\makepagestyle,\makerunningwidth,\newdata,\newgeometry,\newlength,\pagestyle,\par,\parindent,\parskip,\raisebox,\relax,\restoregeometry,\rule,\selectfont,\selectlanguage,\setkeys,\setlength,\sfdefault,\sffamily,\smallskip,\space,\ss,\string,\textwidth,\thispagestyle,\vfill,\vspace}
 %
 % \newcommand{\ispoly}{\textsuperscript{P}}
 %
@@ -99,7 +102,7 @@
 % \maketitle
 %
 % \begin{abstract}
-% This class provides a \LaTeXe\ template for theses at the Faculty of Informatics at the TU Wien.
+% This class provides a \LaTeXe\ template for theses at TU Wien Informatics.
 % In the current version, bachelor and master theses as well as dissertations are supported in both English and German.
 % \end{abstract}
 %
@@ -111,7 +114,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Introduction}
 %
-% This class provides a \LaTeXe\ template for all theses at the Faculty of Informations at the TU Wien.
+% This class provides a \LaTeXe\ template for all theses at TU Wien Informatics.
 % Further information on the document class and accompanying support can be found at \url{https://gitlab.com/ThomasAUZINGER/vutinfth}.
 % Further guidelines may apply to both the format and structure of certain theses.
 % These can be found at \url{https://informatics.tuwien.ac.at/study-services}.
@@ -162,7 +165,7 @@
 %   |\setsubtitle|\ispoly & Subtitle of the thesis & All & Yes \\
 %   |\setcurriculum|\ispoly & Name of the curriculum & B, M & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -172,12 +175,12 @@
 %   \toprule
 %   Command & Role & Type & Optional\\
 %   \midrule
-%   |\setfirstreviewerdata| & Affiliation and country & P & No \\
+%   |\setfirstreviewerdata| & Affiliation and country & D & No \\
 %                           & of first reviewer       &   &    \\
-%   |\setsecondreviewerdata| & Affiliation and country & P & No \\
+%   |\setsecondreviewerdata| & Affiliation and country & D & No \\
 %                            & of second reviewer      &   &    \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -201,14 +204,14 @@
 %   \midrule
 %   |\setauthor| & Author of the thesis & All & No \\
 %   |\setadvisor| & Main advisor of the thesis & All & No \\
-%   |\setsecondadvisor| & Second advisor of the thesis & D, P & Yes \\
+%   |\setsecondadvisor| & Second advisor of the thesis & D & Yes \\
 %   |\setfirstassistant| & First advising assistant & B, M & Yes \\
 %   |\setsecondassistant| & Second advising assistant & B, M & Yes \\
 %   |\setthirdassistant| & Third advising assistant & B, M & Yes \\
-%   |\setfirstreviewer| & First thesis reviewer & D, P & No \\
-%   |\setsecondreviewer| & Second thesis reviewer & D, P & No \\
+%   |\setfirstreviewer| & First thesis reviewer & D & No \\
+%   |\setsecondreviewer| & Second thesis reviewer & D & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -216,7 +219,7 @@
 % \subsubsection{Dates}
 %
 % \DescribeMacro{\setdate}
-% All commands in this section are called with three madatory arguments, e.g., as |\command|\marg{day}\marg{month}\marg{year}. The syntax is identical to the last three arguments of the |\newdate| command of the |datetime| package, from which these commands derive. The following dates can be set:
+% All commands in this section are called with three madatory arguments, e.g., as |\command|\marg{day}\marg{month}\marg{year}. These commands derive from the |\DTMsavedate| command of the |datetime2| package. The following dates can be set:
 % \begin{center}
 % \begin{tabular}{lllc}
 %   \toprule
@@ -224,7 +227,7 @@
 %   \midrule
 %   |\setdate| & Signing date & All & No \\
 %   \midrule
-%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), PhD School (P), All (All)} \\
+%   \multicolumn{4}{l}{Types: Bachelor (B), Master (M), Doctoral (D), All (All)} \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -261,8 +264,6 @@
 %   |\setthesis|\marg{list} & |bachelor| & Specifies a bachelor's thesis. \\
 %                           & |master| & Specifies a master's thesis. \\
 %                           & |doctor| & Specifies a dissertation. \\
-%                           & |phd-school| & Specifies a disseration at the Vienna \\
-%                           &              & PhD school of Informatics. \\
 %   \bottomrule
 % \end{tabular}
 % \end{center}
@@ -339,7 +340,6 @@
 %   \bottomrule
 % \end{tabular}
 % \end{center}
-% Note that a non-English title page is not available for a dissertation at the Vienna PhD School of Informatics.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \subsection{Layout}
@@ -494,7 +494,7 @@
 \RequirePackage{courier}%
 \RequirePackage[T1]{fontenc}%
 \RequirePackage[english,naustrian]{babel}%
-\RequirePackage[nodayofweek]{datetime}%
+\RequirePackage[useregional]{datetime2}%
 \RequirePackage{geometry}%
 \RequirePackage{calc}%
 \RequirePackage{etoolbox}%
@@ -582,10 +582,11 @@
 % \subsubsection{Dates}
 %
 % \begin{macro}{\setdate}
+% \changes{v1.011=v1.11}{2021/04/20}{Updated to datetime2 package.}
 % Creates the internal storage for the signing date.
 %    \begin{macrocode}
 \newcommand{\setdate}[3]{%
-  \newdate{vutinfth@date@signing}{#1}{#2}{#3}%
+  \DTMsavedate{vutinfth@date@signing}{#3-#2-#1}%
 }%
 %    \end{macrocode}
 % \end{macro}
@@ -653,7 +654,7 @@
 % \end{macro}
 %
 % \begin{macro}{\vutinfth@def@person}
-% \changes{v1.4}{2015/08/01}{Added comma to separate posttitle.}
+% \changes{v1.004=v1.4}{2015/08/01}{Added comma to separate posttitle.}
 % Creates the internal storage for a person's name, titles and gender.
 %    \begin{macrocode}
 \newcommand{\vutinfth@def@person}[5]{%
@@ -879,52 +880,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\vutinfth@thesis@doctortype@doctor}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% \begin{macro}{\vutinfth@thesis@doctortype@phd}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% Two doctor thesis categories are differentiated: |doctor| and |phd|, where the latter is for dissertation in the context of the Vienna PhD School of Informatics.
-%    \begin{macrocode}
-\newcommand{\vutinfth@thesis@doctortype@doctor}{%
-  vutinfth@doctor}%
-\newcommand{\vutinfth@thesis@doctortype@phd}{%
-  vutinfth@phd}%
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
-% \begin{macro}{\ifdoctor}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% \begin{macro}{\ifphd}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% Convenience macros to determine the category of the selected doctor thesis type. These need to be nested inside |\ifgraduate| conditions.
-%    \begin{macrocode}
-\newcommand{\ifdoctor}[1]{%
-  \ifestrequal{\vutinfth@thesis@doctortype}{%
-    \vutinfth@thesis@doctortype@doctor
-  }{#1}{}%
-}%
-\newcommand{\ifphd}[1]{%
-  \ifestrequal{\vutinfth@thesis@doctortype}{%
-    \vutinfth@thesis@doctortype@phd
-  }{#1}{}%
-}%
-%    \end{macrocode}
-% \end{macro}
-% \end{macro}
-%
 % \begin{macro}{\vutinfth@thesis@basetype}
-% \begin{macro}{\vutinfth@thesis@doctortype}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
 % \begin{macro}{\vutinfth@thesis@thesisname}
 % \begin{macro}{\vutinfth@thesis@degreename}
 % Initialize the thesis category, the type and the specific degree with error messages.
 %    \begin{macrocode}
 \newcommand{\vutinfth@thesis@basetype}{%
-  \ClassError{vutinfth}{No \string\setthesis \space issued}{%
-    Set thesis type with \string\setthesis.}%
-}%
-\newcommand{\vutinfth@thesis@doctortype}{%
   \ClassError{vutinfth}{No \string\setthesis \space issued}{%
     Set thesis type with \string\setthesis.}%
 }%
@@ -940,21 +901,18 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
-% \end{macro}
 %
 % \begin{macro}{\vutinfth@thesis@bachelor}
 % \begin{macro}{\vutinfth@thesis@master}
 % \begin{macro}{\vutinfth@thesis@doctor}
-% \begin{macro}{\vutinfth@thesis@phd}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% Four main thesis types are differentiated: |bachelor|, |master|, |doctor|, and |phd-school|.
+% \changes{v1.003=v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support for multiple dissertation types. \issue{8}}
+% Three main thesis types are differentiated: |bachelor|, |master|, and |doctor|.
 %    \begin{macrocode}
 \newcommand{\vutinfth@thesis@bachelor}{bachelor}%
 \newcommand{\vutinfth@thesis@master}{master}%
 \newcommand{\vutinfth@thesis@doctor}{doctor}%
-\newcommand{\vutinfth@thesis@phd}{phd-school}%
 %    \end{macrocode}
-% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -978,7 +936,8 @@
 % \end{macro}
 %
 % \begin{macro}{\setthesis}
-% \changes{v1.3}{2014/11/25}{Altered to support multiple dissertation types. \issue{4}}
+% \changes{v1.003=v1.3}{2014/11/25}{Altered to support multiple dissertation types. \issue{4}}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support for multiple dissertation types. \issue{8}}
 % Sets the thesis type.
 %    \begin{macrocode}
 \newcommand{\setthesis}[1]{%
@@ -1010,26 +969,13 @@
 %    \end{macrocode}
 % Initializes |doctor| thesis type.
 %    \begin{macrocode}
-   \renewcommand{\vutinfth@thesis@basetype}{%
-     \vutinfth@thesis@basetype@graduate}%
-   \renewcommand{\vutinfth@thesis@doctortype}{%
-     \vutinfth@thesis@doctortype@doctor}%
-   \@setthesisname{\vutinfth@polylingual@DOCTORTHESIS}%
-   \@setdegreename{%
-     \ClassError{vutinfth}{No \string\setdoctordegree \space issued}{%
-       Set doctor degree with \string\setdoctordegree.}%
-   }%
-  }{}%
-  \ifdefstring{\vutinfth@thesis@phd}{#1}{%
-%    \end{macrocode}
-% Initializes |phd-school| thesis type.
-%    \begin{macrocode}
-   \renewcommand{\vutinfth@thesis@basetype}{%
-     \vutinfth@thesis@basetype@graduate}%
-   \renewcommand{\vutinfth@thesis@doctortype}{%
-     \vutinfth@thesis@doctortype@phd}%
-   \@setthesisname{\vutinfth@polylingual@PHDTHESIS}%
-   \@setdegreename{\vutinfth@polylingual@Pdeg}%
+    \renewcommand{\vutinfth@thesis@basetype}{%
+      \vutinfth@thesis@basetype@graduate}%
+    \@setthesisname{\vutinfth@polylingual@DOCTORTHESIS}%
+    \@setdegreename{%
+      \ClassError{vutinfth}{No \string\setdoctordegree \space issued}{%
+        Set doctor degree with \string\setdoctordegree.}%
+    }%
   }{}%
 }%
 %    \end{macrocode}
@@ -1133,8 +1079,8 @@
 %\label{sec:impl:data:declarations}
 %
 % \begin{macro}{Textual Data}
-% \changes{v1.3}{2014/11/25}{Updated to support external reviewer data. \issue{4}}
-% \changes{v1.8}{2019/02/13}{Removed address information.}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support external reviewer data. \issue{4}}
+% \changes{v1.008=v1.8}{2019/02/13}{Removed address information.}
 % Creates the required textual data entries.
 %    \begin{macrocode}
 % ^^A\CreateData{address}%
@@ -1145,7 +1091,7 @@
 % \end{macro}
 %
 % \begin{macro}{Persons}
-% \changes{v1.3}{2014/11/25}{Updated to support second advisor. Issue \issue{4}}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support second advisor. Issue \issue{4}}
 % Creates the required person entries.
 %    \begin{macrocode}
 \CreatePerson{author}%
@@ -1168,9 +1114,11 @@
 % \end{macro}
 %
 % \begin{macro}{PolyLinguals}
-% \changes{v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
-% \changes{v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
-% \changes{v1.6}{2016/11/12}{Provided German term for second advisor.}
+% \changes{v1.003=v1.3}{2014/11/25}{Added to support multiple dissertation types. \issue{4}}
+% \changes{v1.005=v1.5}{2016/01/17}{Updated name of university to `TU Wien'.}
+% \changes{v1.006=v1.6}{2016/11/12}{Provided German term for second advisor.}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support of multiple dissertation types. \issue{8}}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
 % Creates the polylingual expressions.
 %    \begin{macrocode}
 \CreatePolylingual[
@@ -1186,10 +1134,6 @@
 \CreatePolylingual[
   english=in,
   naustrian=im Rahmen des Studiums]{in}%
-\CreatePolylingual[
-  english=within the]{within}%
-\CreatePolylingual[
-  english=Vienna PhD School of Informatics]{School}%
 \CreatePolylingual[
   english=by,
   naustrian=eingereicht von]{by}%
@@ -1230,6 +1174,27 @@
     Abbildungen --, die anderen Werken oder dem Internet im Wortlaut
     oder dem Sinn nach entnommen sind, auf jeden Fall unter Angabe
     der Quelle als Entlehnung kenntlich gemacht habe.}]{Statement}%
+\CreatePolylingual[
+  english={I further declare that I have used generative AI tools only as an aid,
+	  and that my own intellectual and creative efforts predominate in this
+	  work. In the appendix ``Overview of Generative AI Tools Used'' I have
+	  listed all generative AI tools that were used in the creation of this
+	  work, and indicated where in the work they were used. If whole passages
+	  of text were used without substantial changes, I have indicated the
+	  input (prompts) I formulated and the IT application used with its
+	  product name and version number/date.},
+  naustrian={Ich erkl\"are weiters, dass ich mich generativer KI-Tools lediglich als
+	  Hilfsmittel bedient habe und in der vorliegenden Arbeit mein
+	  gestalterischer Einfluss \"uberwiegt. Im Anhang \glqq\"Ubersicht verwendeter
+	  Hilfsmittel\grqq\ habe ich alle generativen KI-Tools gelistet, die verwendet
+	  wurden, und angegeben, wo und wie sie verwendet wurden.  F\"ur
+	  Textpassagen, die ohne substantielle \"Anderungen \"ubernommen wurden, habe
+	  ich jeweils die von mir formulierten Eingaben (Prompts) und die
+	  verwendete IT-Anwendung mit ihrem Produktnamen und Versionsnummer/Datum
+	  angegeben.}]{AIStatement}%
+\CreatePolylingual[
+  english=Overview of Generative AI Tools Used,
+  naustrian=Übersicht verwendeter Hilfsmittel]{AIToolsChapter}%
 %    \end{macrocode}
 % Degree titles.
 %    \begin{macrocode}
@@ -1279,9 +1244,6 @@
   english=Doktorin der Sozial- und Wirtschaftswissenschaften,
   naustrian=Doktorin der Sozial- und Wirtschaftswissenschaften]{%
   DdegRerSocOecFemale}%
-\CreatePolylingual[
-  english=Doctor of Technical Sciences]{%
-  Pdeg}%
 %    \end{macrocode}
 % Thesis types.
 %    \begin{macrocode}
@@ -1297,8 +1259,6 @@
 \CreatePolylingual[
   english=DISSERTATION,
   naustrian=DISSERTATION]{DOCTORTHESIS}%
-\CreatePolylingual[
-  english=PhD THESIS]{PHDTHESIS}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1390,7 +1350,7 @@
 %    \end{macrocode}
 %
 % \begin{macro}{\vutinfth@header@titlepage}
-% \changes{v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed header graphics.}
 % Initialize header.
 %    \begin{macrocode}
 \newcommand{\vutinfth@header@titlepage}{%
@@ -1403,7 +1363,7 @@
 % \end{macro}
 %
 % \begin{macro}{\vutinfth@footer@titlepage}
-% \changes{v1.9}{2019/11/11}{Changed university URL.}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed university URL.}
 % Initialize footer.
 %    \begin{macrocode}
 \newcommand{\vutinfth@footer@titlepage}{%
@@ -1421,7 +1381,7 @@
 % \end{macro}
 %
 % \begin{macro}{vutinfth@pagestyle@titlepage}
-% \changes{v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed header graphics.}
 % Generate the title page style.
 %    \begin{macrocode}
 \makepagestyle{vutinfth@pagestyle@titlepage}%
@@ -1452,8 +1412,8 @@
 %    \end{macrocode}
 %
 % \begin{macro}{\AdvisorBlock}
-% \changes{v1.3}{2014/11/25}{Updated to support second advisor. \issue{4}}
-% \changes{v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support second advisor. \issue{4}}
+% \changes{v1.006=v1.6}{2016/11/12}{Enabled second advisor for dissertations.}
 % Generates a block with the advisor's name (and potential assistances' names). An error is thrown, if the advisors are not defined consecutively, starting with the first.
 %    \begin{macrocode}
 \newcommand{\AdvisorBlock}{%
@@ -1518,6 +1478,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SignatureFields}
+% \changes{v1.011=v1.11}{2021/04/20}{Updated to datetime2 package.}
 % Generates a block with signatures and an optional place-date entry. The first argument is optional and adds an entry with date and place |[y]|, or adds corresponding whitespace |[h]| or adds nothing |[n]|, which is also the default value. The second arguments adds a rule and the given text below it, if a text is given, or the corresponding whitespace, if not. The third argument adds a rule and the given text below it, if a text is given.
 %    \begin{macrocode}
 \newcommand{\SignatureFields}[3][n]{%
@@ -1527,7 +1488,7 @@
           \vutinfth@placedate@width
         }%
         \vutinfth@polylingual@Place,
-        \displaydate{vutinfth@date@signing}\vspace*{\baselineskip}%
+        \DTMusedate{vutinfth@date@signing}\vspace*{\baselineskip}%
       \end{minipage}%
       \hfill
     }{}%
@@ -1564,28 +1525,18 @@
 % \end{macro}
 
 % \begin{macro}{\ReviewerBlock}
-% \changes{v1.3}{2014/11/25}{Updated to support external reviewers. \issue{4}}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support external reviewers. \issue{4}}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support for external reviewers. \issue{8}}
 % Generates a block with the relevant signatures.
 %    \begin{macrocode}
 \newcommand{\ReviewerBlock}{%
   \ifgraduate{%
-    \ifdoctor{%
-      {\vutinfth@normalsize
-        \vutinfth@polylingual@Reviewed\\
-        \SignatureFields[h]{%
-          \vutinfth@person@firstreviewer@name
-        }{%
-          \vutinfth@person@secondreviewer@name
-        }%
-      }%
-    }%
-    \ifphd{%
-      {\vutinfth@normalsize
-        \vutinfth@polylingual@Reviewers\\
-        \vutinfth@person@firstreviewer@name.
-        \vutinfth@data@firstreviewerdata.\\
-        \vutinfth@person@secondreviewer@name.
-        \vutinfth@data@secondreviewerdata.\\
+    {\vutinfth@normalsize
+      \vutinfth@polylingual@Reviewed\\
+      \SignatureFields[h]{%
+        \vutinfth@person@firstreviewer@name
+      }{%
+        \vutinfth@person@secondreviewer@name
       }%
     }%
   }%
@@ -1594,7 +1545,8 @@
 % \end{macro}
 %
 % \begin{macro}{\SignatureBlock}
-% \changes{v1.3}{2014/11/25}{Updated to support multiple dissertation types. \issue{4}}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support multiple dissertation types. \issue{4}}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support for multiple dissertation types. \issue{8}}
 % Generates a block with the relevant signatures.
 %    \begin{macrocode}
 \newcommand{\SignatureBlock}{%
@@ -1609,17 +1561,8 @@
   }%
   \ifgraduate{%
     {\vutinfth@normalsize
-      \ifdoctor{%
-        \SignatureFields[y]{}{%
-          \vutinfth@person@author@name
-        }%
-      }%
-      \ifphd{%
-        \SignatureFields[y]{%
-          \vutinfth@person@author@name
-        }{%
-          \vutinfth@person@advisor@name
-        }%
+      \SignatureFields[y]{}{%
+        \vutinfth@person@author@name
       }%
     }%
   }%
@@ -1628,9 +1571,10 @@
 % \end{macro}
 %
 % \begin{macro}{\AddTitlePage}
-% \changes{v1.3}{2014/11/15}{Added check for subtitle existence before usage. \issue{1}}
-% \changes{v1.3}{2014/11/25}{Updated to support PhD School mentioning and fixed the associated vertical overflow. \issue{4}}
-% \changes{v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.003=v1.3}{2014/11/15}{Added check for subtitle existence before usage. \issue{1}}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support PhD School mentioning and fixed the associated vertical overflow. \issue{4}}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed obsolete support for a dissertation at the Vienna PhD School of Informations. \issue{8}}
 %   Generates the language-dependant title page. Multiline title and subtitle are supported.
 %    \begin{macrocode}
 \newcommand{\AddTitlePage}{
@@ -1685,12 +1629,6 @@
       }%
       \ifgraduate{%
         {\vutinfth@LARGE{\bfseries\vutinfth@polylingual@degreename}}\par
-        \ifphd{%
-          \vutinfth@bigskip
-          {\vutinfth@large\vutinfth@polylingual@within}\par
-          \vutinfth@bigskip
-          {\vutinfth@LARGE{\bfseries\vutinfth@polylingual@School}}\par
-        }%
       }%
       \vutinfth@bigskip
       {\vutinfth@large\vutinfth@polylingual@by}\par
@@ -1701,7 +1639,6 @@
       \vutinfth@data@regnumber}\par
     }%
     \vutinfth@bigskip\vutinfth@bigskip
-    \ifgraduate{\ifphd{\vspace*{-8mm}}}%
     \begin{minipage}[b][1.6cm][c]{\textwidth}%
       \vutinfth@normalsize%
       \vutinfth@polylingual@faculty\par
@@ -1728,9 +1665,10 @@
 % \subsubsection{Front Matter Material}
 %
 % \begin{macro}{\AddStatementPage}
-% \changes{v1.3}{2014/11/25}{Updated to support multiple languages. \issue{4}}
-% \changes{v1.8}{2019/02/13}{Removed address information.}
-% \changes{v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support multiple languages. \issue{4}}
+% \changes{v1.008=v1.8}{2019/02/13}{Removed address information.}
+% \changes{v1.009=v1.9}{2019/11/11}{Changed header graphics.}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
 %   Generates the statement page.
 %    \begin{macrocode}
 \newcommand{\AddStatementPage}{
@@ -1756,6 +1694,7 @@
 % ^^A      \vutinfth@data@address\par
       \vspace{1.2cm}%
       {\normalfont\vutinfth@polylingual@Statement}\par
+      {\normalfont\vutinfth@polylingual@AIStatement}\par
       \vspace{1.2cm}%
       \SignatureFields[y]{\vutinfth@person@author@name}{}%
   \end{SFFont}%
@@ -1777,19 +1716,13 @@
 % \end{macro}
 %
 % \begin{macro}{\addstatementpage}
-% \changes{v1.3}{2014/11/25}{Updated to support english version. \issue{4}}
+% \changes{v1.003=v1.3}{2014/11/25}{Updated to support English version. \issue{4}}
+% \changes{v1.012=v1.12}{2023/06/04}{Removed support for English version. \issue{8}}
 % Generates the statement page.
 %    \begin{macrocode}
 \newcommand{\addstatementpage}{%
   \selectlanguage{naustrian}%
-  \ifundergraduate{\AddStatementPage}%
-  \ifgraduate{%
-    \ifdoctor{\AddStatementPage}%
-    \ifphd{%
-      \selectlanguage{english}%
-      \AddStatementPage
-    }%
-  }%
+  \AddStatementPage
 }%
 %    \end{macrocode}
 % \end{macro}
@@ -1867,7 +1800,7 @@
 % \end{environment}
 %
 % \begin{environment}{kurzfassung}
-% Generates the German abstract without an entry in the table of contents.
+% Generates the German abstract.
 %    \begin{macrocode}
 \newenvironment{kurzfassung}{%
   \selectlanguage{naustrian}%
@@ -1879,11 +1812,63 @@
 % \end{environment}
 %
 % \begin{environment}{kurzfassung*}
-% Generates the German abstract.
+% Generates the German abstract without an entry in the table of contents.
 %    \begin{macrocode}
 \newenvironment{kurzfassung*}{%
   \selectlanguage{naustrian}%
   \chapter*{Kurzfassung}%
+}{%
+  \cleardoublepage
+}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{aitools}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
+% Generates the English AI statement.
+%    \begin{macrocode}
+\newenvironment{aitools}{%
+  \selectlanguage{english}%
+  \chapter[\vutinfth@AIToolsChapter@english]{\vutinfth@polylingual@AIToolsChapter}%
+}{%
+  \cleardoublepage
+}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{aitools*}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
+% Generates the English AI statement without an entry in the table of contents.
+%    \begin{macrocode}
+\newenvironment{aitools*}{%
+  \selectlanguage{english}%
+  \chapter*{\vutinfth@polylingual@AIToolsChapter}%
+}{%
+  \cleardoublepage
+}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{kitools}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
+% Generates the German AI statement.
+%    \begin{macrocode}
+\newenvironment{kitools}{%
+  \selectlanguage{naustrian}%
+  \chapter[\vutinfth@AIToolsChapter@naustrian]{\vutinfth@polylingual@AIToolsChapter}%
+}{%
+  \cleardoublepage
+}%
+%    \end{macrocode}
+% \end{environment}
+%
+% \begin{environment}{kitools*}
+% \changes{v1.013=v1.13}{2024/05/29}{Added AI statement.}
+% Generates the German AI statement without an entry in the table of contents.
+%    \begin{macrocode}
+\newenvironment{kitools*}{%
+  \selectlanguage{naustrian}%
+  \chapter*{\vutinfth@polylingual@AIToolsChapter}%
 }{%
   \cleardoublepage
 }%
@@ -1903,7 +1888,7 @@
 %
 % \begin{macro}{\frontmatter}
 % \begin{macro}{\mainmatter}
-% \changes{v1.4}{2015/08/01}{Added `Ruled' pagestyle.}
+% \changes{v1.004=v1.4}{2015/08/01}{Added `Ruled' pagestyle.}
 % \begin{macro}{\backmatter}
 % Apply the default page style to the thesis.
 %    \begin{macrocode}

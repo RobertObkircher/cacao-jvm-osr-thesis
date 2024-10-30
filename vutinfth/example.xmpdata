@@ -1,0 +1,6 @@
+\Author{\authorname}                                    % The author's name in the document properties.
+\Title{\thesistitle}                                    % The document's title in the document properties.
+\Language{de-AT}                                        % The document's language in the document properties. Select 'en-US', 'en-GB', or 'de-AT'.
+\Keywords{a\sep list\sep of\sep keywords}               % The document's keywords in the document properties (separated by '\sep ').
+\Publisher{TU Wien}                                     % The document's publisher in the document properties.
+\Subject{Thesis}                                        % The document's subject in the document properties.

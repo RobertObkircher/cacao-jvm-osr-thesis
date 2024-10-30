@@ -1,6 +1,18 @@
-% Copyright (C) 2014-2020 by Thomas Auzinger <thomas@auzinger.name>
-
 \documentclass[draft,final]{vutinfth} % Remove option 'final' to obtain debug information.
+
+% Define convenience functions to use the author name and the thesis title in the PDF document properties.
+\newcommand{\authorname}{Robert Obkircher} % The author name without titles.
+\newcommand{\thesistitle}{On-Stack Replacement in the CACAO VM} % The title of the thesis. The English version should be used, if it exists.
+
+% Create the XMP metadata file for the creation of PDF/A compatible documents.
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+    \Author{\authorname}                                    % The author's name in the document properties.
+    \Title{\thesistitle}                                    % The document's title in the document properties.
+    \Language{de-AT}                                        % The document's language in the document properties. Select 'en-US', 'en-GB', or 'de-AT'.
+    \Keywords{a\sep list\sep of\sep keywords}               % The document's keywords in the document properties (separated by '\sep ').
+    \Publisher{TU Wien}                                     % The document's publisher in the document properties.
+    \Subject{Thesis}                                        % The document's subject in the document properties.
+\end{filecontents*}
 
 % Load packages to allow in- and output of non-ASCII characters.
 \usepackage{lmodern}        % Use an extension of the original Computer Modern font to minimize the use of bitmapped letters.
@@ -14,25 +26,25 @@
 \usepackage{microtype}  % Small-scale typographic enhancements.
 \usepackage[inline]{enumitem} % User control over the layout of lists (itemize, enumerate, description).
 \usepackage{multirow}   % Allows table elements to span several rows.
-\usepackage{booktabs}   % Improves the typesettings of tables.
+\usepackage{booktabs}   % Improves the typesetting of tables.
 \usepackage{subcaption} % Allows the use of subfigures and enables their referencing.
 \usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
-\usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
-\usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
-\usepackage{todonotes} % Provides tooltip-like todo notes.
+\usepackage[dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
+\usepackage{nag}        % Issues warnings when best practices in writing LaTeX documents are violated.
+\usepackage{todonotes}  % Provides tooltip-like todo notes.
+\usepackage{morewrites} % Increases the number of external files that can be used.
 
 % added by me
 \usepackage{listings}
 \usepackage{color}
 \usepackage{wrapfig}
-
-\usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
-\usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
-
-% added by me: https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, fit}
 
+\usepackage[a-2b,mathxmp]{pdfx}      % Enables PDF/A compliance. Loads the package hyperref and has to be included second to last.
+\usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists of acronyms. This package has to be included last.
+
+% added by me: https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_3)%E2%80%94Creating_Flowcharts
 \tikzstyle{startstop} = [rectangle, rounded corners,
 minimum width=3cm,
 minimum height=1cm,
@@ -83,25 +95,17 @@ fill=blue!30]
     basicstyle=\ttfamily\color{basicStyleColor},
 }
 
-% Define convenience functions to use the author name and the thesis title in the PDF document properties.
-\newcommand{\authorname}{Robert Obkircher} % The author name without titles.
-\newcommand{\thesistitle}{On-Stack Replacement in the CACAO VM} % The title of the thesis. The English version should be used, if it exists.
-
 % Set PDF document properties
 \hypersetup{
     pdfpagelayout   = TwoPageRight,           % How the document is shown in PDF viewers (optional).
-    linkbordercolor = {Melon},                % The color of the borders of boxes around crosslinks (optional).
-    pdfauthor       = {\authorname},          % The author's name in the document properties (optional).
-    pdftitle        = {\thesistitle},         % The document's title in the document properties (optional).
-    pdfsubject      = {Subject},              % The document's subject in the document properties (optional).
-    pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
+    linkbordercolor = {Melon},                % The color of the borders of boxes around hyperlinks (optional).
 }
 
 \setpnumwidth{2.5em}        % Avoid overfull hboxes in the table of contents (see memoir manual).
 \setsecnumdepth{subsection} % Enumerate subsections.
 
 \nonzeroparskip             % Create space between paragraphs (optional).
-\setlength{\parindent}{0pt} % Remove paragraph identation (optional).
+\setlength{\parindent}{0pt} % Remove paragraph indentation (optional).
 
 \makeindex      % Use an optional index.
 \makeglossaries % Use an optional glossary.
@@ -127,7 +131,7 @@ fill=blue!30]
 
 % Required data.
 \setregnumber{11807844}
-\setdate{01}{01}{2001} % Set date with 3 arguments: {day}{month}{year}.
+\setdate{30}{10}{2024} % Set date with 3 arguments: {day}{month}{year}.
 \settitle{\thesistitle}{On-Stack Replacement in der CACAO VM} % Sets English and German version of the title (both can be English or German). If your title contains commas, enclose it with additional curvy brackets (i.e., {{your title}}) or define it as a macro as done with \thesistitle.
 %\setsubtitle{Optional Subtitle of the Thesis}{Optionaler Untertitel der Arbeit} % Sets English and German version of the subtitle (both can be English or German).
 
@@ -174,7 +178,7 @@ fill=blue!30]
 %    \end{acknowledgements*}
 
     \begin{kurzfassung}
-        Beim On-Stack-Replacement geht es darum, dynamisch zwischen verschiedenen Maschinencode-Versionen einer Funktion zu wechseln.
+        Beim On-Stack-Replacement (OSR) geht es darum, dynamisch zwischen verschiedenen Maschinencode-Versionen einer Funktion zu wechseln.
         CACAO VM ist eine zu Forschungszwecken entwickelte Virtuelle Maschine für Java,
         die OSR für profilgesteuerte Optimierung einsetzt.
         Diese Arbeit verbessert die unvollständige Implementierung,
@@ -321,33 +325,81 @@ fill=blue!30]
 
     \section{CACAO}
 
+    \textit{{CACAO} — A 64-bit {JavaVM} just-in-time compiler}\cite{cacao-64bit-jit} details the initial design and implementation of CACAO.
+
     \textit{Adaptive Inlining and On-Stack Replacement in the CACAO Virtual Machine}\cite{10.1145/1294325.1294356}
-    describes the implementation of inlining and on-stack replacement in the baseline compiler.
+    describes the implementation of adaptive inlining for the baseline compiler.
+    It uses OSR to install optimized code,
+    and to deoptimize when class loading breaks optimistic assumptions.
+    It also defined the terms source state,
+    execution state, and replacement point.
 
-    Compiler2 was introduced in \textit{Optimization Framework for the CACAO VM}\cite{EislJosef2013Offt}.
-    The thesis describes how the two intermediate representations are transformed by a pipeline of passes.
+    Compiler2 was introduced in \textit{Optimization Framework for the CACAO VM}\cite{EislJosef2013Offt},
+    to make it easier to add new optimizations.
+    Unlike the baseline compiler it makes it possible to easily define passes
+    which operate on the two intermediate representations.
+    Passes can produce artifacts.
+    For example the dominator pass computes one based on the simple algorithm from\cite{dominators},
+    which is then used by scheduling passes.
 
-    \textit{Method Inlining in the Second Stage Compiler of the CACAO VM}\cite{MethodInlining} describes the recently added implementation of inlining for compiler2.
-
+    Recently,
+    \textit{Method Inlining in the Second Stage Compiler of the CACAO VM}\cite{MethodInlining}
+    added support for inlining to compiler2.
+    It operates on the high-level intermediate representation (HIR) and supports multiple heuristics.
+    However, the implementation didn't yet support OSR.
 
     \section{On-Stack Replacement}
 
+    Virtual Machines (VMs) often have dynamic features
+    that require optimizations to be performed at runtime.
+    \textit{A Survey of Adaptive Optimization in Virtual Machines}\cite{AdapOptSurvey}
+    describes how VMs use selective- and feedback-directed optimizations
+    to improve performance.
+    It mentions that OSR was initially developed
+    for debugging in SELF\cite{10.1145/191081.191116}
+    and later adopted by HotSpot\cite{hotspot} and others
+    for dealing with uncommon branches.
 
-    \textit{A Survey of Adaptive Optimization in Virtual Machines}\cite{AdapOptSurvey} surveys adaptive optimization technology in virtual machines.
+    Truffle\cite{truffle} is a language implementation framework based on GraalVM\cite{graalvm},
+    which optimizes interpreters via partial evaluation.
+    Hot loops in AST interpreters get OSR for free,
+    while bytecode interpreters have a call to a polling function on back-edges.
+    Deoptimization is also possible because the interpreter state is tracked throughout the compilation.
+    Since speculations often fall back to similar states,
+    \textit{deoptimization grouping} has been implemented to reduce the size of meta-data\cite{deopt-grouping}.
 
-    The paper \textit{On-Stack Replacement, Distilled}\cite{10.1145/3192366.3192396} presents a provably correct OSR framework,
-    and evaluates an implementation in LLVM.
+    In languages without structured control flow,
+    it is difficult to efficiently detect long-running loops.
+    \textit{Lightweight On-Stack Replacement in Languages with Unstructured Loops}\cite{10.1145/3486606.3486782}
+    argues that relying on back-edges may be a better choice than loop reconstruction.
+    They developed a language-agnostic OSR API in the Truffle Framework\cite{truffle} and integrated it with its LLVM bitcode interpreter.
 
     The document \textit{OSR in the CLR}\cite{CLR-OSR} in the .NET Runtime repository describes various design considerations that
     went into a fully functioning prototype implementation of OSR for the CLR.
-    It focuses on the transition from unoptimized to optimized code, because their optimizing
+    It focuses on the transition from unoptimized to optimized code because their optimizing
     compiler doesn't do speculative optimization and thus doesn't require deoptimization.
     They discuss the requirements of an OSR implementation,
     how and where transitions can be implemented,
     how they can be triggered by counters,
     and whether optimized code should have one or multiple entrypoints.
-    Most of the points in the section about complications aren't relevant,
+    Most of the points in the section about complications aren't relevant
     because the JVM doesn't have features such as references to local variables.
+
+    With several implementations available to date,
+    the engineering aspects of OSR in the context of VMs are well understood.
+    \textit{On-Stack Replacement, Distilled}\cite{10.1145/3192366.3192396}
+    aims to make its applicability more general.
+    They introduce a provably correct framework that can generate compensation code
+    that runs in constant time and
+    enables bidirectional transitions at most program locations.
+    They evaluate an implementation in LLVM and show
+    that it can be used for debugging optimized code,
+    but their ideas are more general.
+    There has also been previous work on OSR with LLVM\cite{llvm-osr-1,llvm-osr-2}.
+
+    JLLVM\cite{jllvm} is an LLVM-based best-effort implementation of a JVM that was developed for a university course.
+    It was extended with support for OSR as part of the bachelor thesis
+    \textit{Implementing On-Stack-Replacement in an LLVM-based JVM}\cite{osr-jllvm}.
 
 
     \chapter{Background}
@@ -1259,6 +1311,16 @@ bash doc/on_stack_replacement/specjvm.sh
 
     \backmatter
 
+    % Declare the use of AI tools as mentioned in the statement of originality.
+    % Use either the English aitools or the German kitools.
+%    \begin{aitools}
+%        \todo{Ihr Text hier.}
+%    \end{aitools}
+
+    \begin{kitools}
+%        \todo{Enter your text here.}
+    \end{kitools}
+
 % Use an optional list of figures.
 %    \listoffigures % Starred version, i.e., \listoffigures*, removes the toc entry.
 
@@ -1277,8 +1339,8 @@ bash doc/on_stack_replacement/specjvm.sh
 %    \printglossaries
 
 % Add a bibliography.
-%\bibliographystyle{alpha}
-    \bibliographystyle{unsrturl}
+    \bibliographystyle{alpha}
+%    \bibliographystyle{unsrturl}
     \bibliography{main}
 
 \end{document}
